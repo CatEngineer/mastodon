@@ -140,7 +140,7 @@ const startWorker = async (workerId) => {
     },
   };
 
-  if (!!process.env.DB_SSLMODE && process.env.DB_SSLMODE !== 'disable') {
+  if (!process.env.DB_SSLMODE && process.env.DB_SSLMODE !== 'disable') {
     pgConfigs.development.ssl = true;
     pgConfigs.production.ssl = true;
   }
